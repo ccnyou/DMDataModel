@@ -21,6 +21,7 @@
 		B29267561E1D5DAA00553180 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B292674E1E1D5DAA00553180 /* main.m */; };
 		B29267571E1D5DAA00553180 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29267501E1D5DAA00553180 /* ViewController.m */; };
 		B292675A1E1D5DDD00553180 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B29267591E1D5DDD00553180 /* libsqlite3.tbd */; };
+		B29267681E1D654C00553180 /* DMModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B29267671E1D654C00553180 /* DMModelObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,9 @@
 		B292674F1E1D5DAA00553180 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B29267501E1D5DAA00553180 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B29267591E1D5DDD00553180 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		B292675F1E1D621200553180 /* DMDataModeling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMDataModeling.h; sourceTree = "<group>"; };
+		B29267661E1D654C00553180 /* DMModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMModelObject.h; sourceTree = "<group>"; };
+		B29267671E1D654C00553180 /* DMModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMModelObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,9 @@
 		B292675B1E1D5DF200553180 /* DMDataModel */ = {
 			isa = PBXGroup;
 			children = (
+				B292675F1E1D621200553180 /* DMDataModeling.h */,
+				B29267661E1D654C00553180 /* DMModelObject.h */,
+				B29267671E1D654C00553180 /* DMModelObject.m */,
 			);
 			name = DMDataModel;
 			path = ../src/DMDataModel;
@@ -284,6 +291,7 @@
 				B29267401E1D5D5700553180 /* FMDatabase.m in Sources */,
 				B29267441E1D5D5700553180 /* FMResultSet.m in Sources */,
 				B29267561E1D5DAA00553180 /* main.m in Sources */,
+				B29267681E1D654C00553180 /* DMModelObject.m in Sources */,
 				B29267411E1D5D5700553180 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

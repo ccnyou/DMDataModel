@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "DMModelObject.h"
 
 @interface DMDataModelTests : XCTestCase
 
