@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B292670A1E1D58D000553180"
-               BuildableName = "DMDataModel.app"
-               BlueprintName = "DMDataModel"
+               BuildableName = "DMDataModelExample.app"
+               BlueprintName = "DMDataModelExample"
                ReferencedContainer = "container:DMDataModel.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B292670A1E1D58D000553180"
-            BuildableName = "DMDataModel.app"
-            BlueprintName = "DMDataModel"
+            BuildableName = "DMDataModelExample.app"
+            BlueprintName = "DMDataModelExample"
             ReferencedContainer = "container:DMDataModel.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,8 +66,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B292670A1E1D58D000553180"
-            BuildableName = "DMDataModel.app"
-            BlueprintName = "DMDataModel"
+            BuildableName = "DMDataModelExample.app"
+            BlueprintName = "DMDataModelExample"
             ReferencedContainer = "container:DMDataModel.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -85,8 +85,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B292670A1E1D58D000553180"
-            BuildableName = "DMDataModel.app"
-            BlueprintName = "DMDataModel"
+            BuildableName = "DMDataModelExample.app"
+            BlueprintName = "DMDataModelExample"
             ReferencedContainer = "container:DMDataModel.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
