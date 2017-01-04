@@ -91,7 +91,8 @@
 				B292671F1E1D58D000553180 /* Info.plist */,
 				B292670E1E1D58D000553180 /* Supporting Files */,
 			);
-			path = DMDataModel;
+			name = DMDataModel;
+			path = ../src/DMDataModel;
 			sourceTree = "<group>";
 		};
 		B292670E1E1D58D000553180 /* Supporting Files */ = {
@@ -108,7 +109,8 @@
 				B29267281E1D58D000553180 /* DMDataModelTests.m */,
 				B292672A1E1D58D000553180 /* Info.plist */,
 			);
-			path = DMDataModelTests;
+			name = DMDataModelTests;
+			path = ../src/DMDataModelTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,7 +355,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W85HQ8L7J9;
-				INFOPLIST_FILE = DMDataModel/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/../src/DMDataModel/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ccnyou.DMDataModel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -365,7 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W85HQ8L7J9;
-				INFOPLIST_FILE = DMDataModel/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/../src/DMDataModel/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ccnyou.DMDataModel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
