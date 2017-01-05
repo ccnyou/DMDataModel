@@ -7,6 +7,7 @@
 //
 
 #import "DMModelObject.h"
+#import "DMDataCore.h"
 
 @implementation DMModelObject
 
@@ -22,12 +23,17 @@
 
 // 保存到数据库
 - (BOOL)save {
-    return NO;
+    DMDataCore* core = [DMDataCore sharedInstance];
+    NSString* dbPath = [self.class dbPath];
+    DMDataOperaotr* operator = [core operatorForDbPath:dbPath];
+    BOOL result = [operator saveObject:self];
+    return result;
 }
 
 // 每一列对应的名字
 + (NSString *)columnForProperty:(NSString *)property {
-    return nil;
+    NSString* columnName = [NSString stringWithFormat:@"f_%@", property];
+    return columnName;
 }
 
 + (NSString *)dbDirectory {

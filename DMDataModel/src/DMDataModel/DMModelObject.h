@@ -38,6 +38,7 @@
 // 数据库存储目录
 + (NSString *)dbDirectory;
 
+// 数据库路径
 + (NSString *)dbPath;
 
 @end
