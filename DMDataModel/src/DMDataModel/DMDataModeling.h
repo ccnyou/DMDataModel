@@ -35,7 +35,10 @@
 @optional
 
 // 每一列对应的名字
-- (NSString *)dm_columnForProperty:(NSString *)property;
++ (NSString *)dm_columnForProperty:(NSString *)property;
+
+// 数据库的全路径
++ (NSString *)dm_dbPath;
 
 @end
 

@@ -25,6 +25,16 @@
     return NO;
 }
 
+// 每一列对应的名字
++ (NSString *)dm_columnForProperty:(NSString *)property {
+    return nil;
+}
+
+// 数据库的全路径
++ (NSString *)dm_dbPath {
+    return nil;
+}
+
 // 数据库名字
 + (NSString *)dm_dbName {
     NSAssert(NO, @"Should use method of a subclass.");

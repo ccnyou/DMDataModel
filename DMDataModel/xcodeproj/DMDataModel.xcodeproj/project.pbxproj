@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A61272641E1DE9830055E34C /* Sample.m in Sources */ = {isa = PBXBuildFile; fileRef = A61272631E1DE9830055E34C /* Sample.m */; };
 		B29267291E1D58D000553180 /* DMDataModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B29267281E1D58D000553180 /* DMDataModelTests.m */; };
 		B29267401E1D5D5700553180 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B29267361E1D5D5700553180 /* FMDatabase.m */; };
 		B29267411E1D5D5700553180 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B29267381E1D5D5700553180 /* FMDatabaseAdditions.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A61272621E1DE9830055E34C /* Sample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sample.h; sourceTree = "<group>"; };
+		A61272631E1DE9830055E34C /* Sample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sample.m; sourceTree = "<group>"; };
 		B292670B1E1D58D000553180 /* DMDataModelExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMDataModelExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29267241E1D58D000553180 /* DMDataModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DMDataModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29267281E1D58D000553180 /* DMDataModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMDataModelTests.m; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 			children = (
 				B29267281E1D58D000553180 /* DMDataModelTests.m */,
 				B292672A1E1D58D000553180 /* Info.plist */,
+				A61272621E1DE9830055E34C /* Sample.h */,
+				A61272631E1DE9830055E34C /* Sample.m */,
 			);
 			name = DMDataModelTests;
 			path = ../src/DMDataModelTests;
@@ -291,6 +296,7 @@
 				B29267401E1D5D5700553180 /* FMDatabase.m in Sources */,
 				B29267441E1D5D5700553180 /* FMResultSet.m in Sources */,
 				B29267561E1D5DAA00553180 /* main.m in Sources */,
+				A61272641E1DE9830055E34C /* Sample.m in Sources */,
 				B29267681E1D654C00553180 /* DMModelObject.m in Sources */,
 				B29267411E1D5D5700553180 /* FMDatabaseAdditions.m in Sources */,
 			);
@@ -451,11 +457,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = W85HQ8L7J9;
-				INFOPLIST_FILE = DMDataModelTests/Info.plist;
+				INFOPLIST_FILE = ../src/DMDataModelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ccnyou.DMDataModelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DMDataModel.app/DMDataModel";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DMDataModelExample.app/DMDataModelExample";
 			};
 			name = Debug;
 		};
@@ -464,11 +470,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = W85HQ8L7J9;
-				INFOPLIST_FILE = DMDataModelTests/Info.plist;
+				INFOPLIST_FILE = ../src/DMDataModelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ccnyou.DMDataModelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DMDataModel.app/DMDataModel";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DMDataModelExample.app/DMDataModelExample";
 			};
 			name = Release;
 		};
