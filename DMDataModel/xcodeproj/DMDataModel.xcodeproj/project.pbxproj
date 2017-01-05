@@ -23,6 +23,8 @@
 		B29267571E1D5DAA00553180 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29267501E1D5DAA00553180 /* ViewController.m */; };
 		B292675A1E1D5DDD00553180 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B29267591E1D5DDD00553180 /* libsqlite3.tbd */; };
 		B29267681E1D654C00553180 /* DMModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B29267671E1D654C00553180 /* DMModelObject.m */; };
+		B292676B1E1E284600553180 /* DMDataCore.m in Sources */ = {isa = PBXBuildFile; fileRef = B292676A1E1E284600553180 /* DMDataCore.m */; };
+		B292676E1E1E2A0F00553180 /* DMDataOperaotr.m in Sources */ = {isa = PBXBuildFile; fileRef = B292676D1E1E2A0F00553180 /* DMDataOperaotr.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,10 @@
 		B292675F1E1D621200553180 /* DMDataModeling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMDataModeling.h; sourceTree = "<group>"; };
 		B29267661E1D654C00553180 /* DMModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMModelObject.h; sourceTree = "<group>"; };
 		B29267671E1D654C00553180 /* DMModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMModelObject.m; sourceTree = "<group>"; };
+		B29267691E1E284600553180 /* DMDataCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDataCore.h; sourceTree = "<group>"; };
+		B292676A1E1E284600553180 /* DMDataCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDataCore.m; sourceTree = "<group>"; };
+		B292676C1E1E2A0F00553180 /* DMDataOperaotr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDataOperaotr.h; sourceTree = "<group>"; };
+		B292676D1E1E2A0F00553180 /* DMDataOperaotr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDataOperaotr.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +184,10 @@
 				B292675F1E1D621200553180 /* DMDataModeling.h */,
 				B29267661E1D654C00553180 /* DMModelObject.h */,
 				B29267671E1D654C00553180 /* DMModelObject.m */,
+				B29267691E1E284600553180 /* DMDataCore.h */,
+				B292676A1E1E284600553180 /* DMDataCore.m */,
+				B292676C1E1E2A0F00553180 /* DMDataOperaotr.h */,
+				B292676D1E1E2A0F00553180 /* DMDataOperaotr.m */,
 			);
 			name = DMDataModel;
 			path = ../src/DMDataModel;
@@ -291,6 +301,7 @@
 			files = (
 				B29267421E1D5D5700553180 /* FMDatabasePool.m in Sources */,
 				B29267431E1D5D5700553180 /* FMDatabaseQueue.m in Sources */,
+				B292676E1E1E2A0F00553180 /* DMDataOperaotr.m in Sources */,
 				B29267571E1D5DAA00553180 /* ViewController.m in Sources */,
 				B29267511E1D5DAA00553180 /* AppDelegate.m in Sources */,
 				B29267401E1D5D5700553180 /* FMDatabase.m in Sources */,
@@ -299,6 +310,7 @@
 				A61272641E1DE9830055E34C /* Sample.m in Sources */,
 				B29267681E1D654C00553180 /* DMModelObject.m in Sources */,
 				B29267411E1D5D5700553180 /* FMDatabaseAdditions.m in Sources */,
+				B292676B1E1E284600553180 /* DMDataCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

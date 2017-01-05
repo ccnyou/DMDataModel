@@ -1,6 +1,6 @@
-#import "FMResultSet.h"
-#import "FMDatabase.h"
 #import "unistd.h"
+#import "FMDatabase.h"
+#import "FMResultSet.h"
 
 #if FMDB_SQLITE_STANDALONE
 #import <sqlite3/sqlite3.h>

@@ -11,12 +11,12 @@
 @implementation DMModelObject
 
 // 通过主键获取对象
-+ (instancetype)dm_objectWithId:(id)objectId {
++ (instancetype)objectWithId:(id)objectId {
     return nil;
 }
 
 // 通过 where 获取对象
-+ (NSArray *)dm_objectsWhere:(NSString *)where arguments:(NSArray *)arguments {
++ (NSArray *)objectsWhere:(NSString *)where arguments:(NSArray *)arguments {
     return nil;
 }
 
@@ -26,29 +26,41 @@
 }
 
 // 每一列对应的名字
-+ (NSString *)dm_columnForProperty:(NSString *)property {
++ (NSString *)columnForProperty:(NSString *)property {
     return nil;
 }
 
-// 数据库的全路径
-+ (NSString *)dm_dbPath {
-    return nil;
++ (NSString *)dbDirectory {
+    static NSString* documentPath = nil;
+    if (!documentPath) {
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        documentPath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    }
+    
+    return documentPath;
+}
+
++ (NSString *)dbPath {
+    NSString* directory = [self dbDirectory];
+    NSString* dbName = [self dbName];
+    NSString* dbPath = [directory stringByAppendingPathComponent:dbName];
+    return dbPath;
 }
 
 // 数据库名字
-+ (NSString *)dm_dbName {
++ (NSString *)dbName {
     NSAssert(NO, @"Should use method of a subclass.");
     return nil;
 }
 
 // 表名
-+ (NSString *)dm_tableName {
++ (NSString *)tableName {
     NSAssert(NO, @"Should use method of a subclass.");
     return nil;
 }
 
 // 要持久化的属性
-+ (NSArray<NSString *> *)dm_persistentPropertys {
++ (NSArray<NSString *> *)persistentProperties {
     NSAssert(NO, @"Should use method of a subclass.");
     return nil;
 }

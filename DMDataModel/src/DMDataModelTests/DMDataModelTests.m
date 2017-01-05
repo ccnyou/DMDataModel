@@ -7,12 +7,14 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "DMModelObject.h"
-#import "Sample.h"
 #import "FMDB.h"
+#import "Sample.h"
+#import "DMModelObject.h"
 
 @interface DMDataModelTests : XCTestCase
 @property (nonatomic, strong) Sample* sut;
+@property (nonatomic, strong) NSString* dbPath;
+@property (nonatomic, strong) FMDatabase* db;
 @end
 
 @implementation DMDataModelTests
@@ -21,23 +23,29 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     self.sut = [[Sample alloc] init];
+    
+    NSString* directory = [self.sut.class dm_dbDirectory];
+    NSString* dbName = [self.sut.class dm_dbName];
+    self.dbPath = [directory stringByAppendingPathComponent:dbName];
+    self.db = [FMDatabase databaseWithPath:self.dbPath];
 }
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     self.sut = nil;
+    self.dbPath = nil;
+    [self.db close];
     [super tearDown];
 }
 
-- (void)testSaveObjectShouldCreateTable {
-    NSString* dbPath = [self.sut.class dm_dbPath];
+// 首次保存对象应该会创建表
+- (void)testFirstSaveObjectShouldCreateTable {
     NSString* tableName = [self.sut.class dm_tableName];
-    XCTAssert(dbPath, @"db path should not be nil");
+    XCTAssert(self.dbPath, @"db path should not be nil");
     XCTAssert(tableName, @"table name should not be nil");
-    FMDatabase* db = [FMDatabase databaseWithPath:dbPath];
-    BOOL tableExists = [db tableExists:tableName];
+    BOOL tableExists = [self.db tableExists:tableName];
     if (tableExists) {
-        BOOL dropSuccess = [db executeUpdate:@"drop table ?", tableName];
+        BOOL dropSuccess = [self.db executeUpdate:@"drop table ?", tableName];
         XCTAssert(dropSuccess, @"drop table fail");
     }
     
@@ -49,7 +57,7 @@
     BOOL saveSuccess = [self.sut dm_save];
     XCTAssert(saveSuccess, @"save object fail");
     
-    tableExists = [db tableExists:tableName];
+    tableExists = [self.db tableExists:tableName];
     XCTAssert(tableExists, @"save object should create table");
 }
 

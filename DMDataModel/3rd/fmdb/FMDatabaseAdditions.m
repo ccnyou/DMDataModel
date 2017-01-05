@@ -7,8 +7,8 @@
 //
 
 #import "FMDatabase.h"
-#import "FMDatabaseAdditions.h"
 #import "TargetConditionals.h"
+#import "FMDatabaseAdditions.h"
 
 #if FMDB_SQLITE_STANDALONE
 #import <sqlite3/sqlite3.h>

@@ -12,19 +12,19 @@
 @protocol DMDataModeling <NSObject>
 
 // 通过主键获取对象
-+ (instancetype)dm_objectWithId:(id)objectId;
++ (instancetype)objectWithId:(id)objectId;
 
 // 通过 where 获取对象
-+ (NSArray *)dm_objectsWhere:(NSString *)where arguments:(NSArray *)arguments;
++ (NSArray *)objectsWhere:(NSString *)where arguments:(NSArray *)arguments;
 
 // 数据库名字
-+ (NSString *)dm_dbName;
++ (NSString *)dbName;
 
 // 表名
-+ (NSString *)dm_tableName;
++ (NSString *)tableName;
 
 // 要持久化的属性
-+ (NSArray<NSString *> *)dm_persistentPropertys;
++ (NSArray<NSString *> *)persistentProperties;
 
 // 主键
 + (NSString *)dm_primaryKey;
@@ -35,10 +35,10 @@
 @optional
 
 // 每一列对应的名字
-+ (NSString *)dm_columnForProperty:(NSString *)property;
++ (NSString *)columnForProperty:(NSString *)property;
 
-// 数据库的全路径
-+ (NSString *)dm_dbPath;
+// 数据库存储目录
++ (NSString *)dbDirectory;
 
 @end
 
