@@ -40,4 +40,8 @@
     return _writeQueue;
 }
 
+- (BOOL)saveObject:(id<DMDataModeling>)object {
+    return NO;
+}
+
 @end

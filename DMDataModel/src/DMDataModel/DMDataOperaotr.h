@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DMDataModeling.h"
 
 @interface DMDataOperaotr : NSObject
 
 - (instancetype)initWithDbPath:(NSString *)dbPath;
+
+- (BOOL)saveObject:(id<DMDataModeling>)object;
 
 @end

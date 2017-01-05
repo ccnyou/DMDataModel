@@ -27,10 +27,10 @@
 + (NSArray<NSString *> *)persistentProperties;
 
 // 主键
-+ (NSString *)dm_primaryKey;
++ (NSString *)primaryKey;
 
 // 保存到数据库
-- (BOOL)dm_save;
+- (BOOL)save;
 
 @optional
 

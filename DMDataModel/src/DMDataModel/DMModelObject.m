@@ -21,7 +21,7 @@
 }
 
 // 保存到数据库
-- (BOOL)dm_save {
+- (BOOL)save {
     return NO;
 }
 
@@ -66,7 +66,7 @@
 }
 
 // 主键
-+ (NSString *)dm_primaryKey {
++ (NSString *)primaryKey {
     NSAssert(NO, @"Should use method of a subclass.");
     return nil;
 }
