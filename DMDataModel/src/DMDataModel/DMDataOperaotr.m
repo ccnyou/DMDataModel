@@ -43,18 +43,19 @@
 - (BOOL)saveObject:(id<DMDataModeling>)object {
     __block BOOL result = NO;
     [self.writeQueue inDatabase:^(FMDatabase *db) {
-        NSString* tableName = [object tableName];
-        if (![db tableExists:tableName]) {
-            [self createTable:tableName];
-        }
+        [self createTable:object db:db];
+        [self updateScheme:object db:db];
+        
     }];
     
     return result;
 }
 
-#pragma mark - Private
+- (void)createTable:(id<DMDataModeling>)tableName db:(FMDatabase *)db {
+    
+}
 
-- (void)createTable:(NSString *)tableName {
+- (void)updateScheme:(id<DMDataModeling>)object db:(FMDatabase *)db {
     
 }
 
