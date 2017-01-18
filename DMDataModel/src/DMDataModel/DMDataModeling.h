@@ -9,6 +9,8 @@
 #ifndef DMDataModeling_h
 #define DMDataModeling_h
 
+typedef BOOL(^DMSavingTestBlock)(NSString* key, id value);
+
 @protocol DMDataModeling <NSObject>
 
 // 通过主键获取对象
@@ -31,6 +33,12 @@
 
 // 保存到数据库
 - (BOOL)save;
+
+// 部分保存，空字段不会更新到数据库
+- (BOOL)partiallySave;
+
+// 用 block 判断每个字段是否应该保存
+- (BOOL)partiallySaveWithTestBlock:(DMSavingTestBlock)block;
 
 @optional
 

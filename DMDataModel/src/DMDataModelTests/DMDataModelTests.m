@@ -24,8 +24,8 @@
     // Put setup code here. This method is called before the invocation of each test method in the class.
     self.sut = [[Sample alloc] init];
     
-    NSString* directory = [self.sut.class dm_dbDirectory];
-    NSString* dbName = [self.sut.class dm_dbName];
+    NSString* directory = [self.sut.class dbDirectory];
+    NSString* dbName = [self.sut.class dbName];
     self.dbPath = [directory stringByAppendingPathComponent:dbName];
     self.db = [FMDatabase databaseWithPath:self.dbPath];
 }
@@ -40,7 +40,7 @@
 
 // 首次保存对象应该会创建表
 - (void)testFirstSaveObjectShouldCreateTable {
-    NSString* tableName = [self.sut.class dm_tableName];
+    NSString* tableName = [self.sut.class tableName];
     XCTAssert(self.dbPath, @"db path should not be nil");
     XCTAssert(tableName, @"table name should not be nil");
     BOOL tableExists = [self.db tableExists:tableName];
@@ -54,7 +54,7 @@
     self.sut.date = [NSDate date];
     self.sut.timeInterval = [[NSDate date] timeIntervalSince1970];
     self.sut.data = [@"Data" dataUsingEncoding:NSUTF8StringEncoding];
-    BOOL saveSuccess = [self.sut dm_save];
+    BOOL saveSuccess = [self.sut save];
     XCTAssert(saveSuccess, @"save object fail");
     
     tableExists = [self.db tableExists:tableName];

@@ -30,6 +30,16 @@
     return result;
 }
 
+// 部分保存，空字段不会更新到数据库
+- (BOOL)partiallySave {
+    return NO;
+}
+
+// 用 block 判断每个字段是否应该保存
+- (BOOL)partiallySaveWithTestBlock:(DMSavingTestBlock)block {
+    return NO;
+}
+
 // 每一列对应的名字
 + (NSString *)columnForProperty:(NSString *)property {
     NSString* columnName = [NSString stringWithFormat:@"f_%@", property];

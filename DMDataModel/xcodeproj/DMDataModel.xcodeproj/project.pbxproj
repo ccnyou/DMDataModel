@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A61272641E1DE9830055E34C /* Sample.m in Sources */ = {isa = PBXBuildFile; fileRef = A61272631E1DE9830055E34C /* Sample.m */; };
+		A69BEA1E1E2F7652001854E1 /* NSArray+Yoyo.m in Sources */ = {isa = PBXBuildFile; fileRef = A69BEA1D1E2F7652001854E1 /* NSArray+Yoyo.m */; };
 		B29267291E1D58D000553180 /* DMDataModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B29267281E1D58D000553180 /* DMDataModelTests.m */; };
 		B29267401E1D5D5700553180 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B29267361E1D5D5700553180 /* FMDatabase.m */; };
 		B29267411E1D5D5700553180 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B29267381E1D5D5700553180 /* FMDatabaseAdditions.m */; };
@@ -40,6 +41,8 @@
 /* Begin PBXFileReference section */
 		A61272621E1DE9830055E34C /* Sample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sample.h; sourceTree = "<group>"; };
 		A61272631E1DE9830055E34C /* Sample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sample.m; sourceTree = "<group>"; };
+		A69BEA1C1E2F7652001854E1 /* NSArray+Yoyo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Yoyo.h"; sourceTree = "<group>"; };
+		A69BEA1D1E2F7652001854E1 /* NSArray+Yoyo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Yoyo.m"; sourceTree = "<group>"; };
 		B292670B1E1D58D000553180 /* DMDataModelExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMDataModelExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29267241E1D58D000553180 /* DMDataModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DMDataModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29267281E1D58D000553180 /* DMDataModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMDataModelTests.m; sourceTree = "<group>"; };
@@ -93,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A69BEA1B1E2F7652001854E1 /* NSArray+Yoyo */ = {
+			isa = PBXGroup;
+			children = (
+				A69BEA1C1E2F7652001854E1 /* NSArray+Yoyo.h */,
+				A69BEA1D1E2F7652001854E1 /* NSArray+Yoyo.m */,
+			);
+			path = "NSArray+Yoyo";
+			sourceTree = "<group>";
+		};
 		B29267021E1D58D000553180 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +141,7 @@
 		B29267331E1D5D5700553180 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				A69BEA1B1E2F7652001854E1 /* NSArray+Yoyo */,
 				B29267341E1D5D5700553180 /* fmdb */,
 			);
 			name = 3rd;
@@ -300,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B29267421E1D5D5700553180 /* FMDatabasePool.m in Sources */,
+				A69BEA1E1E2F7652001854E1 /* NSArray+Yoyo.m in Sources */,
 				B29267431E1D5D5700553180 /* FMDatabaseQueue.m in Sources */,
 				B292676E1E1E2A0F00553180 /* DMDataOperaotr.m in Sources */,
 				B29267571E1D5DAA00553180 /* ViewController.m in Sources */,
