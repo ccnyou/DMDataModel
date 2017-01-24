@@ -61,7 +61,11 @@
     return NO;
 }
 
-- (void)storageObject:(id <DMDataModeling>)object block:(DMSavingTestBlock)block db:(FMDatabase *)db {
+- (void)storageObject:(id <DMDataModeling>)object
+      savingTestBlock:(DMSavingTestBlock)savingTestBlock
+      existsTestBlock:(DMExistsTestBlock)existsTestBlock
+                   db:(FMDatabase *)db
+{
     NSString* primaryKey = nil;
     if ([object respondsToSelector:@selector(primaryKey)]) {
         primaryKey = object.primaryKey;
@@ -70,9 +74,14 @@
     BOOL updateExistsObject = NO;
     NSDictionary *keyValues = [self _keyValuesOfObject:object];
     if (primaryKey.length > 0) {
-        updateExistsObject = [self isObjectExistsForId:primaryKey];
+        if (existsTestBlock) {
+            updateExistsObject = existsTestBlock(object, db);
+        } else {
+            updateExistsObject = [self isObjectExistsForId:primaryKey];
+        }
     }
 
+    // TODO: using saving test block
     if (updateExistsObject) {
         [self _executeUpdateCommand:db table:object.tableName primaryKey:primaryKey keyValues:keyValues];
     } else {

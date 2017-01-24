@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DMDataModeling.h"
+#import "DMCommon.h"
 
 @interface DMDataOperaotr : NSObject
 
@@ -20,6 +21,11 @@
 - (BOOL)isObjectExistsForId:(id)objectId;
 
 // 存储一个对象，如果对象存在会根据主键更新，如果对象不存在会进行插入
-- (void)storageObject:(id <DMDataModeling>)object block:(DMSavingTestBlock)block db:(FMDatabase *)db;
+- (void)storageObject:(id<DMDataModeling>)object block:(DMSavingTestBlock)block db:(FMDatabase *)db;
+
+- (void)storageObject:(id<DMDataModeling>)object
+      savingTestBlock:(DMSavingTestBlock)savingTestBlock
+      existsTestBlock:(DMExistsTestBlock)existsTestBlock
+                   db:(FMDatabase *)db;
 
 @end

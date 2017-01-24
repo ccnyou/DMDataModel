@@ -39,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C4E0A47F30D5C31CB115BA9 /* DMCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMCommon.h; sourceTree = "<group>"; };
 		A61272621E1DE9830055E34C /* Sample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sample.h; sourceTree = "<group>"; };
 		A61272631E1DE9830055E34C /* Sample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sample.m; sourceTree = "<group>"; };
 		A69BEA1C1E2F7652001854E1 /* NSArray+Yoyo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Yoyo.h"; sourceTree = "<group>"; };
@@ -201,6 +202,7 @@
 				B292676A1E1E284600553180 /* DMDataCore.m */,
 				B292676C1E1E2A0F00553180 /* DMDataOperaotr.h */,
 				B292676D1E1E2A0F00553180 /* DMDataOperaotr.m */,
+				5C4E0A47F30D5C31CB115BA9 /* DMCommon.h */,
 			);
 			name = DMDataModel;
 			path = ../src/DMDataModel;

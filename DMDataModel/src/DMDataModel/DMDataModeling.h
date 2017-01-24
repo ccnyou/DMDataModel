@@ -9,7 +9,7 @@
 #ifndef DMDataModeling_h
 #define DMDataModeling_h
 
-typedef BOOL(^DMSavingTestBlock)(NSString* _Nonnull key, id _Nullable value);
+#import "DMCommon.h"
 
 @protocol DMDataModeling <NSObject>
 
