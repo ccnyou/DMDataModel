@@ -42,14 +42,42 @@
 }
 
 - (BOOL)saveObject:(id<DMDataModeling>)object {
+    BOOL result = [self saveObject:object withTestBlock:nil];
+    return result;
+}
+
+- (BOOL)saveObject:(id <DMDataModeling>)object withTestBlock:(DMSavingTestBlock)block {
     __block BOOL result = NO;
     [self.writeQueue inDatabase:^(FMDatabase *db) {
         [self createTable:object db:db];
         [self updateScheme:object db:db];
-        
+        [self storageObject:object block:block db:db];
     }];
-    
+
     return result;
+}
+
+- (BOOL)isObjectExistsForId:(id)objectId {
+    return NO;
+}
+
+- (void)storageObject:(id <DMDataModeling>)object block:(DMSavingTestBlock)block db:(FMDatabase *)db {
+    NSString* primaryKey = nil;
+    if ([object respondsToSelector:@selector(primaryKey)]) {
+        primaryKey = object.primaryKey;
+    }
+
+    BOOL updateExistsObject = NO;
+    NSDictionary *keyValues = [self _keyValuesOfObject:object];
+    if (primaryKey.length > 0) {
+        updateExistsObject = [self isObjectExistsForId:primaryKey];
+    }
+
+    if (updateExistsObject) {
+        [self _executeUpdateCommand:db table:object.tableName primaryKey:primaryKey keyValues:keyValues];
+    } else {
+        [self _executeInsertCommand:db table:object.tableName primaryKey:primaryKey keyValues:keyValues];
+    }
 }
 
 - (void)createTable:(id<DMDataModeling>)tableName db:(FMDatabase *)db {
@@ -61,6 +89,10 @@
 }
 
 #pragma mark - Private Method
+
+- (NSDictionary *)_keyValuesOfObject:(id <DMDataModeling>)object {
+    return nil;
+}
 
 /*
  * 用 NSDictionary 执行 sql 命令
@@ -85,6 +117,10 @@
     NSString* formatedSql = [NSString stringWithFormat:@"%@(%@) values(%@)", sql, joinedKey, joinedValue];
     BOOL status = [db executeUpdate:formatedSql withParameterDictionary:keyValue];
     return status;
+}
+
+- (void)_executeInsertCommand:(FMDatabase *)database table:(NSString *)table primaryKey:(NSString *)key keyValues:(NSDictionary *)values {
+
 }
 
 - (BOOL)_executeUpdateCommand:(FMDatabase *)db

@@ -9,44 +9,44 @@
 #ifndef DMDataModeling_h
 #define DMDataModeling_h
 
-typedef BOOL(^DMSavingTestBlock)(NSString* key, id value);
+typedef BOOL(^DMSavingTestBlock)(NSString* _Nonnull key, id _Nullable value);
 
 @protocol DMDataModeling <NSObject>
 
 // 通过主键获取对象
-+ (instancetype)objectWithId:(id)objectId;
++ (nonnull instancetype)objectWithId:(nonnull id)objectId;
 
 // 通过 where 获取对象
-+ (NSArray *)objectsWhere:(NSString *)where arguments:(NSArray *)arguments;
++ (nonnull NSArray *)objectsWhere:(nullable NSString *)where arguments:(nullable NSArray *)arguments;
 
 // 数据库名字
-+ (NSString *)dbName;
++ (nonnull NSString *)dbName;
 
 // 表名
-+ (NSString *)tableName;
++ (nonnull NSString *)tableName;
 
 // 要持久化的属性
-+ (NSArray<NSString *> *)persistentProperties;
++ (nonnull NSArray<NSString *> *)persistentProperties;
 
 // 主键
-+ (NSString *)primaryKey;
++ (nullable NSString *)primaryKey;
 
 // 保存到数据库
 - (BOOL)save;
+
+@optional
+
+// 每一列对应的名字
++ (nonnull NSString *)columnForProperty:(nonnull NSString *)property;
+
+// 数据库存储目录
++ (nonnull NSString *)dbDirectory;
 
 // 部分保存，空字段不会更新到数据库
 - (BOOL)partiallySave;
 
 // 用 block 判断每个字段是否应该保存
-- (BOOL)partiallySaveWithTestBlock:(DMSavingTestBlock)block;
-
-@optional
-
-// 每一列对应的名字
-+ (NSString *)columnForProperty:(NSString *)property;
-
-// 数据库存储目录
-+ (NSString *)dbDirectory;
+- (BOOL)partiallySaveWithTestBlock:(nonnull DMSavingTestBlock)block;
 
 @end
 
